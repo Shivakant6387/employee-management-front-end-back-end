@@ -26,4 +26,7 @@ public class Employee {
     @Column(name = "email_id",unique = true)
     @NotBlank(message = "Email cannot be blank")
     private String email;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "department_id")
+    private Department department;
 }
